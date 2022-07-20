@@ -1,0 +1,12 @@
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\bin\Debug\net6.0\ProjetoAgendamento.Domain.deps.json
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\bin\Debug\net6.0\ProjetoAgendamento.Domain.dll
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\bin\Debug\net6.0\ProjetoAgendamento.Domain.pdb
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ProjetoAgendamento.Domain.csproj.AssemblyReference.cache
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ProjetoAgendamento.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ProjetoAgendamento.Domain.AssemblyInfoInputs.cache
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ProjetoAgendamento.Domain.AssemblyInfo.cs
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ProjetoAgendamento.Domain.csproj.CoreCompileInputs.cache
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ProjetoAgendamento.Domain.dll
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\refint\ProjetoAgendamento.Domain.dll
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ProjetoAgendamento.Domain.pdb
+D:\Projetos\projeto-agendamento\src\ProjetoAgendamento.Domain\obj\Debug\net6.0\ref\ProjetoAgendamento.Domain.dll
