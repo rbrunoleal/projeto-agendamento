@@ -1,6 +1,6 @@
 ﻿namespace ProjetoAgendamento.Domain.DTOs
 {
-    public class ClienteDto : BaseDto
+    public class ClienteDto 
     {
         public string Nome { get; set; }
 

@@ -2,7 +2,7 @@
 namespace ProjetoAgendamento.Domain.DTOs
 {
     
-    public class HorarioDto : BaseDto
+    public class HorarioDto 
 
     {
         public DateTime Inicio { get; set; }

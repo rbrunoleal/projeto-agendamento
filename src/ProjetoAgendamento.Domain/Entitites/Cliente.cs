@@ -3,6 +3,8 @@
 namespace ProjetoAgendamento.Domain.Entitites
 {
 	[Table("Clientes")]
+	//herança 
+
 	public class Cliente : BaseEntity
 	{
 		public string Cpf { get; set; }

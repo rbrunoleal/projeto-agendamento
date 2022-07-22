@@ -5,8 +5,7 @@ using ProjetoAgendamento.Domain.Entitites;
 //local onde fica as classes
 namespace ProjetoAgendamento.Domain.DTOs
 {
-    //herança 
-    public class ServicoDto : BaseDto
+    public class ServicoDto 
     {
         public string Descricao { get; set; }
 

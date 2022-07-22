@@ -3,7 +3,7 @@
 namespace ProjetoAgendamento.Domain.DTOs
 {
     
-    public class FuncionarioDto : BaseDto
+    public class FuncionarioDto 
 
     {
         public string Descricao { get; set; }

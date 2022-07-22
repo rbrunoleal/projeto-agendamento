@@ -3,7 +3,7 @@ using ProjetoAgendamento.Domain.Entitites;
 
 namespace ProjetoAgendamento.Domain.DTOs
 {
-        public class Agendamento : BaseDto 
+        public class Agendamento 
     {
         public Cliente Cliente { get; set; }
 
