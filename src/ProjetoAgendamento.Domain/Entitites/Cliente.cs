@@ -12,5 +12,11 @@ namespace ProjetoAgendamento.Domain.Entitites
 		public string Telefone	{ get; set; }
 
 		public string Email { get; set; }
+
+		
+
 	}
+
+
+
 }
