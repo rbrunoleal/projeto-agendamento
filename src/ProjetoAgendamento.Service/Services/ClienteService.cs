@@ -26,14 +26,14 @@ namespace ProjetoAgendamento.Service.Services
 			return _mapper.Map<IEnumerable<ClienteResponse>>(listEntity);
 		}
 
-		public async Task<ClienteDto> Insere(ClienteDto Morador) {
-			var dtoEntity = _mapper.Map<Cliente>(Morador);
+		public async Task<ClienteDto> Insere(ClienteDto cliente) {
+			var dtoEntity = _mapper.Map<Cliente>(cliente);
 			var entity = await _repository.InsertAsync(dtoEntity);			
 			return _mapper.Map<ClienteDto>(entity);
 		}
 
-		public async Task<ClienteDto> Atualiza(ClienteDto Morador) {
-			var dtoEntity = _mapper.Map<Cliente>(Morador);
+		public async Task<ClienteDto> Atualiza(ClienteDto cliente) {
+			var dtoEntity = _mapper.Map<Cliente>(cliente);
 			var entity = await _repository.UpdateAsync(dtoEntity);
 			return _mapper.Map<ClienteDto>(entity);
 		}		
