@@ -3,7 +3,7 @@
 namespace ProjetoAgendamento.Domain.Entitites
 {
     [Table("Horarios")]
-    public class HorarioDto : BaseEntity
+    public class Horario: BaseEntity
     {
         public DateTime Inicio { get; set; }
 

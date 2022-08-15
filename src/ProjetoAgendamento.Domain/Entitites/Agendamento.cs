@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProjetoAgendamento.Domain.Entitites
+    namespace ProjetoAgendamento.Domain.Entitites
 {
     [Table("Agendamentos")]
 

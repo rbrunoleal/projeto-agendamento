@@ -1,16 +1,15 @@
 ﻿
-using ProjetoAgendamento.Domain.Entitites;
 
 namespace ProjetoAgendamento.Domain.DTOs
 {
-        public class Agendamento 
+        public class AgendamentoDto
     {
-        public Cliente Cliente { get; set; }
+        public ClienteDto Cliente { get; set; }
 
 
-        public Servico Servico { get; set; }
+        public ServicoDto Servico { get; set; }
 
-        public Funcionario Funcionario { get; set; }
+        public FuncionarioDto Funcionario { get; set; }
 
         public DateTime HorarioInicio { get; set; }
     }

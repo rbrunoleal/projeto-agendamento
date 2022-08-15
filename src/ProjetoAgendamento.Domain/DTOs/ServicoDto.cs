@@ -5,7 +5,7 @@ using ProjetoAgendamento.Domain.Entitites;
 //local onde fica as classes
 namespace ProjetoAgendamento.Domain.DTOs
 {
-    public class ServicoDto 
+    public class ServicoDto
     {
         public string Descricao { get; set; }
 
@@ -15,7 +15,7 @@ namespace ProjetoAgendamento.Domain.DTOs
 
         public string Titulo { get; set; }
 
-        public List<Funcionario> Funcionario { get; set; }
+        public List<FuncionarioDto> Funcionario { get; set; }
 
     }
 
