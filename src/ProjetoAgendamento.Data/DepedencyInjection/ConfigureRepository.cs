@@ -19,8 +19,6 @@ namespace ProjetoAgendamento.Data.DepedencyInjection
             serviceCollection.AddScoped(typeof(IFuncionarioRepository), typeof(FuncionarioRepository));
             serviceCollection.AddScoped(typeof(IHorarioRepository), typeof(HorarioRepository));
             serviceCollection.AddScoped(typeof(IServicoRepository), typeof(ServicoRepository));
-
-
         }
     }
 }

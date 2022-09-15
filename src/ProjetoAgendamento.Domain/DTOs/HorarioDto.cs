@@ -9,7 +9,4 @@ namespace ProjetoAgendamento.Domain.DTOs
 
         public DateTime Fim { get; set; }
     }
-
-
-
 }

@@ -8,7 +8,6 @@
     {
         public Cliente Cliente { get; set; }
 
-
         public Servico Servico { get; set; }
 
         public Funcionario Funcionario { get; set; }

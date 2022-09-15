@@ -10,8 +10,8 @@ namespace ProjetoAgendamento.Domain.ViewModels.Responses
     public class FuncionarioResponse 
 
     {
-        public string Descricao { get; set; }
+        public string Nome { get; set; }
 
         public List<ServicoResponse> Servicos { get; set; }
-}
+    }
 }

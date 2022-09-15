@@ -6,7 +6,7 @@ namespace ProjetoAgendamento.Domain.Entitites
     public class Funcionario : BaseEntity
 
     {
-        public string Descricao { get; set; }
+        public string Nome { get; set; }
 
         public List<Servico> Servicos { get; set; }
 }

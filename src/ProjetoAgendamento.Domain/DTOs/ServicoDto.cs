@@ -18,7 +18,4 @@ namespace ProjetoAgendamento.Domain.DTOs
         public List<FuncionarioDto> Funcionario { get; set; }
 
     }
-
-
-
 }

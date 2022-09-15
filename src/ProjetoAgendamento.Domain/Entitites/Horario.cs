@@ -9,7 +9,4 @@ namespace ProjetoAgendamento.Domain.Entitites
 
         public DateTime Fim { get; set; }
     }
-
-
-
 }

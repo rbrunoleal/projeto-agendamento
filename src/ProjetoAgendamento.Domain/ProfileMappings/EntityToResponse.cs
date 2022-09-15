@@ -12,7 +12,6 @@ namespace ProjetoAgendamento.Domain.ProfileMappings
             CreateMap<Funcionario, FuncionarioResponse>().ReverseMap();
             CreateMap<Horario, HorarioResponse>().ReverseMap();
             CreateMap<Servico, ServicoResponse>().ReverseMap();
-
         }
     }
 }
