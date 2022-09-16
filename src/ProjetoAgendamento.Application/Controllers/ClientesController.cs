@@ -29,13 +29,13 @@ namespace ProjetoAgendamento.Application.Controllers
         }
        
         [HttpPost]
-        public async Task<ActionResult> InsereCliente([FromBody] ClienteDto Morador) {
+        public async Task<ActionResult> InsereCliente([FromBody] ClienteDto Cliente) {
             if (!ModelState.IsValid) {
                 return BadRequest(ModelState);
             }
 
             try {
-                var result = await _service.Insere(Morador);
+                var result = await _service.Insere(Cliente);
                 if (result != null) {
                     return Ok(result);
                 }
@@ -49,13 +49,13 @@ namespace ProjetoAgendamento.Application.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult> AtualizaCliente([FromBody] ClienteDto Morador) {
+        public async Task<ActionResult> AtualizaCliente([FromBody] ClienteDto Cliente) {
             if (!ModelState.IsValid) {
                 return BadRequest(ModelState);
             }
 
             try {
-                var result = await _service.Atualiza(Morador);
+                var result = await _service.Atualiza(Cliente);
                 if (result != null) {
                     return Ok(result);
                 }
