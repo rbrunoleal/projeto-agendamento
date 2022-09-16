@@ -1,8 +1,6 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ProjetoAgendamento.Data.DepedencyInjection;
-using ProjetoAgendamento.Data.Interfaces;
-using ProjetoAgendamento.Data.Repository;
 using ProjetoAgendamento.Domain.ProfileMappings;
 using ProjetoAgendamento.Service.DepedencyInjection;
 
