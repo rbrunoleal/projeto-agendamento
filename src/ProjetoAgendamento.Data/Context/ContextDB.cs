@@ -17,6 +17,7 @@ namespace ProjetoAgendamento.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-        }
+            optionsBuilder.UseNpgsql("Host=bue2k5wsjbit9ysot7rz-postgresql.services.clever-cloud.com;Port=5432;Pooling=true;Database=bue2k5wsjbit9ysot7rz;User Id=uldaodjdqpozkroreykg;Password=ti91dGh9u24epzYG46cO;");
+        }        
     }   
 }

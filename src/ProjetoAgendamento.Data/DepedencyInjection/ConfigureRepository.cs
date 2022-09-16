@@ -11,7 +11,7 @@ namespace ProjetoAgendamento.Data.DepedencyInjection
         public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection) {
             serviceCollection.AddDbContext<ContextDB>(
                 op => op.UseNpgsql("Host=bue2k5wsjbit9ysot7rz-postgresql.services.clever-cloud.com;Port=5432;Pooling=true;Database=bue2k5wsjbit9ysot7rz;User Id=uldaodjdqpozkroreykg;Password=ti91dGh9u24epzYG46cO;")
-            );
+            );            
 
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             serviceCollection.AddScoped(typeof(IAgendamentoRepository), typeof(AgendamentoRepository));
