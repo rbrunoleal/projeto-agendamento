@@ -2,7 +2,7 @@
 
 namespace ProjetoAgendamento.Domain.Entitites
 {
-    [Table("Funcionrio")]
+    [Table("Funcionarios")]
     public class Funcionario : BaseEntity
 
     {
