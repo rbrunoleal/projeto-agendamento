@@ -2,7 +2,7 @@
 
 namespace ProjetoAgendamento.Domain.Entitites
 {
-    [Table("Servico")]
+    [Table("Servicos")]
     public class Servico : BaseEntity
     {
         public string Descricao { get; set; }

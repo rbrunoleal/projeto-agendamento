@@ -2,8 +2,7 @@
 
 namespace ProjetoAgendamento.Domain.Entitites
 {
-	[Table("Clientes")]
-	//herança 
+	[Table("Clientes")]	
 
 	public class Cliente : BaseEntity
 	{
