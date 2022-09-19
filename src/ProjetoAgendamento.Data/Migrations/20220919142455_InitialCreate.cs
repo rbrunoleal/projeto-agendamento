@@ -30,14 +30,14 @@ namespace ProjetoAgendamento.Data.Migrations
                 name: "Funcionarios",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Nome = table.Column<string>(type: "text", nullable: false),
+                    FuncionarioId = table.Column<Guid>(type: "uuid", nullable: false),
                     CreateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    UpdateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    UpdateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    Nome = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Funcionarios", x => x.Id);
+                    table.PrimaryKey("PK_Funcionarios", x => x.FuncionarioId);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,17 +59,17 @@ namespace ProjetoAgendamento.Data.Migrations
                 name: "Servicos",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    ServicoId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CreateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    UpdateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     Descricao = table.Column<string>(type: "text", nullable: false),
                     Valor = table.Column<decimal>(type: "numeric", nullable: false),
                     Tempo = table.Column<TimeSpan>(type: "interval", nullable: false),
-                    Titulo = table.Column<string>(type: "text", nullable: false),
-                    CreateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    UpdateAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    Titulo = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Servicos", x => x.Id);
+                    table.PrimaryKey("PK_Servicos", x => x.ServicoId);
                 });
 
             migrationBuilder.CreateTable(
@@ -97,13 +97,13 @@ namespace ProjetoAgendamento.Data.Migrations
                         name: "FK_Agendamentos_Funcionarios_FuncionarioId",
                         column: x => x.FuncionarioId,
                         principalTable: "Funcionarios",
-                        principalColumn: "Id",
+                        principalColumn: "FuncionarioId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Agendamentos_Servicos_ServicoId",
                         column: x => x.ServicoId,
                         principalTable: "Servicos",
-                        principalColumn: "Id",
+                        principalColumn: "ServicoId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -112,22 +112,22 @@ namespace ProjetoAgendamento.Data.Migrations
                 columns: table => new
                 {
                     FuncionarioId = table.Column<Guid>(type: "uuid", nullable: false),
-                    ServicosId = table.Column<Guid>(type: "uuid", nullable: false)
+                    ServicoId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FuncionarioServico", x => new { x.FuncionarioId, x.ServicosId });
+                    table.PrimaryKey("PK_FuncionarioServico", x => new { x.FuncionarioId, x.ServicoId });
                     table.ForeignKey(
                         name: "FK_FuncionarioServico_Funcionarios_FuncionarioId",
                         column: x => x.FuncionarioId,
                         principalTable: "Funcionarios",
-                        principalColumn: "Id",
+                        principalColumn: "FuncionarioId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FuncionarioServico_Servicos_ServicosId",
-                        column: x => x.ServicosId,
+                        name: "FK_FuncionarioServico_Servicos_ServicoId",
+                        column: x => x.ServicoId,
                         principalTable: "Servicos",
-                        principalColumn: "Id",
+                        principalColumn: "ServicoId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -147,9 +147,9 @@ namespace ProjetoAgendamento.Data.Migrations
                 column: "ServicoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FuncionarioServico_ServicosId",
+                name: "IX_FuncionarioServico_ServicoId",
                 table: "FuncionarioServico",
-                column: "ServicosId");
+                column: "ServicoId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -1,6 +1,4 @@
-﻿using ProjetoAgendamento.Domain.Entitites;
-
-namespace ProjetoAgendamento.Domain.DTOs
+﻿namespace ProjetoAgendamento.Domain.DTOs
 {
     
     public class FuncionarioDto

@@ -12,7 +12,7 @@ using ProjetoAgendamento.Data.Context;
 namespace ProjetoAgendamento.Data.Migrations
 {
     [DbContext(typeof(ContextDB))]
-    [Migration("20220916002356_InitialCreate")]
+    [Migration("20220919142455_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,21 +23,6 @@ namespace ProjetoAgendamento.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("FuncionarioServico", b =>
-                {
-                    b.Property<Guid>("FuncionarioId")
-                        .HasColumnType("uuid");
-
-                    b.Property<Guid>("ServicosId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("FuncionarioId", "ServicosId");
-
-                    b.HasIndex("ServicosId");
-
-                    b.ToTable("FuncionarioServico");
-                });
 
             modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.Agendamento", b =>
                 {
@@ -109,7 +94,7 @@ namespace ProjetoAgendamento.Data.Migrations
 
             modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.Funcionario", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("FuncionarioId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
@@ -123,9 +108,24 @@ namespace ProjetoAgendamento.Data.Migrations
                     b.Property<DateTime?>("UpdateAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.HasKey("Id");
+                    b.HasKey("FuncionarioId");
 
                     b.ToTable("Funcionarios");
+                });
+
+            modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.FuncionarioServico", b =>
+                {
+                    b.Property<Guid>("FuncionarioId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("ServicoId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("FuncionarioId", "ServicoId");
+
+                    b.HasIndex("ServicoId");
+
+                    b.ToTable("FuncionarioServico");
                 });
 
             modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.Horario", b =>
@@ -153,7 +153,7 @@ namespace ProjetoAgendamento.Data.Migrations
 
             modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.Servico", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("ServicoId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
@@ -177,24 +177,9 @@ namespace ProjetoAgendamento.Data.Migrations
                     b.Property<decimal>("Valor")
                         .HasColumnType("numeric");
 
-                    b.HasKey("Id");
+                    b.HasKey("ServicoId");
 
                     b.ToTable("Servicos");
-                });
-
-            modelBuilder.Entity("FuncionarioServico", b =>
-                {
-                    b.HasOne("ProjetoAgendamento.Domain.Entitites.Funcionario", null)
-                        .WithMany()
-                        .HasForeignKey("FuncionarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ProjetoAgendamento.Domain.Entitites.Servico", null)
-                        .WithMany()
-                        .HasForeignKey("ServicosId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.Agendamento", b =>
@@ -222,6 +207,35 @@ namespace ProjetoAgendamento.Data.Migrations
                     b.Navigation("Funcionario");
 
                     b.Navigation("Servico");
+                });
+
+            modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.FuncionarioServico", b =>
+                {
+                    b.HasOne("ProjetoAgendamento.Domain.Entitites.Funcionario", "Funcionario")
+                        .WithMany("FuncionarioServico")
+                        .HasForeignKey("FuncionarioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoAgendamento.Domain.Entitites.Servico", "Servico")
+                        .WithMany("FuncionarioServico")
+                        .HasForeignKey("ServicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Funcionario");
+
+                    b.Navigation("Servico");
+                });
+
+            modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.Funcionario", b =>
+                {
+                    b.Navigation("FuncionarioServico");
+                });
+
+            modelBuilder.Entity("ProjetoAgendamento.Domain.Entitites.Servico", b =>
+                {
+                    b.Navigation("FuncionarioServico");
                 });
 #pragma warning restore 612, 618
         }

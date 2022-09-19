@@ -1,9 +1,4 @@
-﻿
-//dependencias externas
-using ProjetoAgendamento.Domain.Entitites;
-
-//local onde fica as classes
-namespace ProjetoAgendamento.Domain.DTOs
+﻿namespace ProjetoAgendamento.Domain.DTOs
 {
     public class ServicoDto
     {
@@ -11,11 +6,8 @@ namespace ProjetoAgendamento.Domain.DTOs
 
         public decimal Valor { get; set; }
 
-        public TimeSpan Tempo { get; set; }
+        public decimal Tempo { get; set; }
 
         public string Titulo { get; set; }
-
-        public List<FuncionarioDto> Funcionario { get; set; }
-
     }
 }
