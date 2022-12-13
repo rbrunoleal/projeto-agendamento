@@ -81,6 +81,20 @@ namespace ProjetoAgendamento.Application.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
-    }
+
+		[HttpGet("{id}")]
+		public ActionResult BuscarAgendamento(Guid id) {
+			if (!ModelState.IsValid) {
+				return BadRequest(ModelState);
+			}
+
+			try {
+				return Ok(_service.BuscarAgendamento(id));
+			}
+			catch (ArgumentException ex) {
+				return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+			}
+		}
+	}
 
 }

@@ -27,7 +27,7 @@ namespace ProjetoAgendamento.Data.Repository
                 throw ex;
             }
             return true;
-        }
+        }       
 
         public async Task<T> InsertAsync(T item) {
             try {
@@ -35,8 +35,7 @@ namespace ProjetoAgendamento.Data.Repository
                     item.Id = Guid.NewGuid();
 
                 item.CreateAt = DateTime.Now;
-                _dataSet.Add(item);
-
+                _dataSet.Add(item);                
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex) {

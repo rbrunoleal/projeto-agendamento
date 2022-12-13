@@ -9,9 +9,12 @@ namespace ProjetoAgendamento.Domain.ProfileMappings
         public DtoToEntity() {
             CreateMap<AgendamentoDto, Agendamento>().ReverseMap();
             CreateMap<ClienteDto, Cliente>().ReverseMap();
-            CreateMap<FuncionarioDto, Cliente>().ReverseMap();
+            CreateMap<FuncionarioDto, Funcionario>().ReverseMap();
             CreateMap<HorarioDto, Horario>().ReverseMap();
             CreateMap<ClienteDto, Cliente>().ReverseMap();
+            CreateMap<UnidadeDto, Unidade>().ReverseMap();
+            CreateMap<EnderecoDto, Endereco>().ReverseMap();
+            CreateMap<ServicoDto, Servico>().ReverseMap();            
         }
     }
 }

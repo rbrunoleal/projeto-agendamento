@@ -9,5 +9,6 @@ namespace ProjetoAgendamento.Service.Interfaces
         Task<AgendamentoDto> Insere(AgendamentoDto Agenda);
         Task<AgendamentoDto> Atualiza(AgendamentoDto Agenda);
         Task<bool> Deleta(Guid id);
+        AgendamentoResponse BuscarAgendamento(Guid id);
     }
 }

@@ -3,7 +3,7 @@ using ProjetoAgendamento.Domain.DTOs;
 using ProjetoAgendamento.Service.Interfaces;
 using System.Net;
 
-namespace ProjetoAgendamento.Application.Controllers
+namespace ProjetoServico.Application.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -29,13 +29,13 @@ namespace ProjetoAgendamento.Application.Controllers
         }
        
         [HttpPost]
-        public async Task<ActionResult> InsereServico([FromBody] ServicoDto Servico) {
+        public async Task<ActionResult> InsereServico([FromBody] ServicoDto servico) {
             if (!ModelState.IsValid) {
                 return BadRequest(ModelState);
             }
 
             try {
-                var result = await _service.Insere(Servico);
+                var result = await _service.Insere(servico);
                 if (result != null) {
                     return Ok(result);
                 }

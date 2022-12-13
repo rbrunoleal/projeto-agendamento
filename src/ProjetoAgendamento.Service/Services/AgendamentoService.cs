@@ -20,6 +20,10 @@ namespace ProjetoAgendamento.Service.Services
         public async Task<bool> Deleta(Guid id) {
             return await _repository.DeleteAsync(id);
         }
+		public AgendamentoResponse BuscarAgendamento(Guid id) {
+			var entity = _repository.BuscarAgendamento(id.ToString());
+			return _mapper.Map<AgendamentoResponse>(entity);
+		}
 
 		async Task<IEnumerable<AgendamentoResponse>> IAgendamentoService.BuscarTodos() {
 			var listEntity = await _repository.SelectAsync();

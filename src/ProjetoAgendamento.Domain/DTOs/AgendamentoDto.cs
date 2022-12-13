@@ -2,15 +2,12 @@
 
 namespace ProjetoAgendamento.Domain.DTOs
 {
-        public class AgendamentoDto
+    public class AgendamentoDto
     {
         public ClienteDto Cliente { get; set; }
-
-
-        public ServicoDto Servico { get; set; }
-
-        public FuncionarioDto Funcionario { get; set; }
-
+        public Guid ServicoId { get; set; }        
+        public Guid FuncionarioId { get; set; }        
+        public Guid UnidadeId { get; set; }
         public DateTime HorarioInicio { get; set; }
     }
 }

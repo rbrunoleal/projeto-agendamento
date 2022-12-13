@@ -2,10 +2,8 @@
 {
     
     public class FuncionarioDto
-
     {
-        public string Nome { get; set; }
-
-        public List<ServicoDto> Servicos { get; set; }
+        public Guid UnidadeId { get; set; }
+        public string Nome { get; set; }        
     }
 }
